@@ -1,0 +1,14 @@
+Store Numbers Function
+
+Function recieves a number from a click event 
+
+if the firstNum value is empty set the click value to the first number
+
+else if the firstNum value exsists and the first opperator is empty concatenate the value for firstNum with the passed peramiter
+
+else if the fist num value exists and the first opperator value exsists set the peramiter passed to second number
+
+else if the first num value exists and the first opperator value exists and the total exists console log "this is not a valid click"
+
+else concadinate the peramiter passed to the second number value.
+

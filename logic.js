@@ -23,7 +23,7 @@ $(document).ready(function() {
       numObj.firstNum = "";
       numObj.secondNum = "";
       numObj.firstOpp = "";
-      numObj.total = 0;
+      numObj.total = "";
     
       console.log("clear: ", numObj)
     
@@ -39,7 +39,6 @@ $(document).ready(function() {
     // set first number 
     
     var storeNumbers = function(num){
-    
           if (numObj.firstNum === ""){
                numObj.firstNum = num;
                printFirst.textContent = numObj.firstNum;
@@ -49,10 +48,12 @@ $(document).ready(function() {
                   } else if (numObj.firstNum != "" && numObj.firstOpp !== "" && numObj.secondNum == ""){
                     numObj.secondNum = num
                     printSecond.textContent = numObj.secondNum;
-                    } else{
-                      numObj.secondNum = numObj.secondNum + "" + num
-                      printSecond.textContent = numObj.secondNum;
-                    }
+                     } else if(numObj.firstNum != "" && numObj.firstOpp !== "" && numObj.secondNum !== "" && numObj.total !== ""){
+                        console.log("this is not a valid click")
+                        } else{
+                            numObj.secondNum = numObj.secondNum + "" + num
+                            printSecond.textContent = numObj.secondNum;
+                        }
     
                     
     
@@ -64,18 +65,18 @@ $(document).ready(function() {
     
     var setFirstOpp = function(opp){
     
-      if (opp && numObj.firstOpp == ""){
-        numObj.firstOpp = opp;
-        console.log(numObj)
-        printFirstOpp.textContent = numObj.firstOpp;
-        } else {
-          numObj.secondOpp = opp
-          $("#result").empty();
-          total()
-          }  
-      }
+      if (numObj.firstOpp == ""){
+          numObj.firstOpp = opp;
+          console.log(numObj)
+          printFirstOpp.textContent = numObj.firstOpp;
+          } else {
+            numObj.secondOpp = opp
+            $("#result").empty();
+            total()
+                }  
+    }     
     
-    // toal the numbers
+    // toal the numbers 
     
     var total = function total(){
     
